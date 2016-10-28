@@ -5,21 +5,6 @@
 #include <conio.h>
 #include <windows.h>
 
-/**Function Declarations*/
-void createAccount();
-int checkEmailValidity(char name[50]);
-//void addToUserData(struct UserData * temp);
-//void addToUserGraph(struct UserData * temp);
-void credRefresh();
-void credLoad();
-void displayUserData();
-void viewGraph();
-void storeGraph();
-void readGraph();
-void Login(char name[50]);
-void makeConnection(char name[50]);
-
-
 /**Global Variable Declarations**/
 int CurrentUserIndex = 0;
 int UserCounter = 1;
@@ -525,7 +510,7 @@ struct UserData * searchUserData(char name[50])
 
     while(ptr != NULL)
     {
-        if(strcmp(ptr->name,name)==0)
+        if(strcmp(strupr(ptr->name),strupr(name))==0)
             break;
         ptr = ptr ->next;
     }
